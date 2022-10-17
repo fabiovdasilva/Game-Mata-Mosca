@@ -19,7 +19,7 @@ let cronometro = setInterval(function () {
     clearInterval(cronometro);
     clearInterval(criaMosca);
     //alert("Vitória");
-    window.location.href = 'vitoria.html'
+    window.location.href = 'winner.html'
   } else {
     document.querySelector("#cronometro").innerHTML = tempo;
   }
@@ -31,7 +31,7 @@ function posicaoRandomica() {
     document.getElementById("mosca").remove();
 
     if (vidas > 3) {
-      window.location.href = "fim_de_jogo.html";
+      window.location.href = "endGame.html";
     } else {
       document.querySelector("#v" + vidas).src = "./Assets/coracao_vazio.png";
 
