@@ -3,6 +3,15 @@ let largura = 0;
 let vidas = 1;
 let tempo = 10;
 
+const nivel =
+  window.location.search; /* search recupera tudo que está a direita da ? (incluindo o sinal)*/
+
+nivel = nivel.replace("?", "");
+
+if(nivel === 'normal'){
+  
+}
+
 document.querySelector("#cronometro").innerHTML = tempo;
 
 function ajustarTamanhoPalco() {
@@ -19,7 +28,7 @@ let cronometro = setInterval(function () {
     clearInterval(cronometro);
     clearInterval(criaMosca);
     //alert("Vitória");
-    window.location.href = 'winner.html'
+    window.location.href = "winner.html";
   } else {
     document.querySelector("#cronometro").innerHTML = tempo;
   }
