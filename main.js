@@ -1,16 +1,26 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
-let tempo = 10;
+let tempo = 15;
 
-const nivel =
-  window.location.search; /* search recupera tudo que está a direita da ? (incluindo o sinal)*/
+let criaMoscaTempo = 1500;
+
+let nivel = window.location.search; 
+/* search recupera tudo que está a direita da ? (incluindo o sinal)*/
 
 nivel = nivel.replace("?", "");
 
-if(nivel === 'normal'){
-  
-}
+if (nivel === "normal") {
+  //1500 
+  criaMoscaTempo = 1500;
+} else if (nivel === "dificil") {
+  //1000
+  criaMoscaTempo = 1000;
+} else if (nivel === "impossivel") {
+  //750
+  criaMoscaTempo = 750;
+} else if ( nivel === 'beast')
+  criaMoscaTempo = 400;
 
 document.querySelector("#cronometro").innerHTML = tempo;
 
@@ -39,7 +49,7 @@ function posicaoRandomica() {
   if (document.getElementById("mosca")) {
     document.getElementById("mosca").remove();
 
-    if (vidas > 3) {
+    if (vidas > 4) {
       window.location.href = "endGame.html";
     } else {
       document.querySelector("#v" + vidas).src = "./Assets/coracao_vazio.png";
@@ -103,4 +113,4 @@ function ladoAleatorio() {
 
 let criaMosca = setInterval(function () {
   posicaoRandomica();
-}, 2000);
+}, criaMoscaTempo);
